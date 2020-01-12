@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         switch1.setOnSwitchListener(object: OnSwitchListener{
             override fun onSwitch(switch: DayNightSwitch, isDayChecked: Boolean) {
-                switch2.setDayChecked(switch.isDayChecked())
+                switch2.setDayChecked(switch.isDayChecked(), true)
             }
         })
     }

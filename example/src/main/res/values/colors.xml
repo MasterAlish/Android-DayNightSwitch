@@ -3,4 +3,6 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="day_4">#35b5e0</color>
+    <color name="slider_4">#f6b830</color>
 </resources>

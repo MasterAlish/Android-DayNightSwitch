@@ -7,18 +7,51 @@
     android:padding="20dp">
 
     <ma.apps.widgets.daynightswitch.DayNightSwitch
+        android:id="@+id/switch_0"
+        android:layout_width="115dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="16dp"
+        app:dayImage="@drawable/day_3"
+        app:nightImage="@drawable/night_3"
+        app:sliderColor="#FFFFFF"
+        app:sliderPadding="4dp" />
+
+    <ma.apps.widgets.daynightswitch.DayNightSwitch
         android:id="@+id/switch_1"
         android:layout_width="120dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         app:sliderColor="#F49044"
         app:sliderPadding="7dp" />
 
     <ma.apps.widgets.daynightswitch.DayNightSwitch
         android:id="@+id/switch_2"
-        android:layout_width="56dp"
-        android:layout_height="24dp"
+        android:layout_width="125dp"
+        android:layout_height="61dp"
         android:layout_marginTop="16dp"
-        app:sliderColor="#F49044"
-        app:sliderPadding="2dp" />
+        app:dayImage="@drawable/day_1"
+        app:nightImage="@drawable/night_1"
+        app:sliderColor="#FFFFFF"
+        app:sliderPadding="6dp" />
+
+
+    <ma.apps.widgets.daynightswitch.DayNightSwitch
+        android:id="@+id/switch_3"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        app:dayImage="@color/day_4"
+        app:nightImage="@drawable/night_4"
+        app:sliderColor="@color/slider_4"
+        app:sliderPadding="8dp" />
+
+    <ma.apps.widgets.daynightswitch.DayNightSwitch
+        android:layout_width="153dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        app:dayImage="@drawable/night_2"
+        app:nightImage="@drawable/day_2"
+        app:sliderColor="#FFF420"
+        app:sliderPadding="6dp" />
 
 </LinearLayout>
