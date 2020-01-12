@@ -13,8 +13,16 @@
         android:layout_marginTop="16dp"
         app:dayImage="@drawable/day_3"
         app:nightImage="@drawable/night_3"
+        app:slideDuration="500"
         app:sliderColor="#FFFFFF"
         app:sliderPadding="4dp" />
+
+    <TextView
+        android:id="@+id/label_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/night"
+        android:textSize="20sp" />
 
     <ma.apps.widgets.daynightswitch.DayNightSwitch
         android:id="@+id/switch_1"
@@ -42,6 +50,7 @@
         android:layout_marginTop="16dp"
         app:dayImage="@color/day_4"
         app:nightImage="@drawable/night_4"
+        app:slideDuration="100"
         app:sliderColor="@color/slider_4"
         app:sliderPadding="8dp" />
 

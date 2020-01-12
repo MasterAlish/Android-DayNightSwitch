@@ -6,5 +6,6 @@
         <attr name="sliderPadding" format="dimension"/>
         <attr name="dayImage" format="reference"/>
         <attr name="nightImage" format="reference"/>
+        <attr name="slideDuration" format="integer"/>
     </declare-styleable>
 </resources>

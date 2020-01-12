@@ -15,7 +15,8 @@ import android.widget.*
 import androidx.core.view.setPadding
 
 
-class DayNightSwitch(context: Context, attrs: AttributeSet?, style: Int) : LinearLayout(context, attrs, style), View.OnClickListener {
+class DayNightSwitch(context: Context, attrs: AttributeSet?, style: Int) :
+    LinearLayout(context, attrs, style), View.OnClickListener {
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context) : this(context, null)
 
@@ -25,7 +26,7 @@ class DayNightSwitch(context: Context, attrs: AttributeSet?, style: Int) : Linea
     private lateinit var sliderContainer: FrameLayout
 
     private var isDayChecked = false
-    private val duration = 300L
+    private var duration = 300L
     private var cornerRadius: Float = 0f
     private var viewWidth: Int = 0
     private var viewHeight: Int = 0
@@ -49,6 +50,14 @@ class DayNightSwitch(context: Context, attrs: AttributeSet?, style: Int) : Linea
         this.listener = listener
     }
 
+    fun setOnSwitchListener(listener: (DayNightSwitch, Boolean) -> Unit) {
+        this.listener = object : OnSwitchListener {
+            override fun onSwitch(switch: DayNightSwitch, isDayChecked: Boolean) {
+                listener(switch, isDayChecked)
+            }
+        }
+    }
+
     private fun initViews(context: Context) {
         val rootView = LayoutInflater.from(context).inflate(R.layout.day_night_switch, this, false)
         addView(rootView)
@@ -64,16 +73,21 @@ class DayNightSwitch(context: Context, attrs: AttributeSet?, style: Int) : Linea
     private fun loadStyleAttrs(context: Context, attrs: AttributeSet?) {
         val styleAttrs = context.obtainStyledAttributes(attrs, R.styleable.DayNightSwitch, 0, 0)
 
-        dayDrawable = styleAttrs.getDrawable(R.styleable.DayNightSwitch_dayImage) ?: resources.getDrawable(R.drawable.day)
-        nightDrawable = styleAttrs.getDrawable(R.styleable.DayNightSwitch_nightImage) ?: resources.getDrawable(R.drawable.night)
-        sliderMargin = styleAttrs.getDimension(R.styleable.DayNightSwitch_sliderPadding, dpToPx(5f)).toInt()
+        dayDrawable = styleAttrs.getDrawable(R.styleable.DayNightSwitch_dayImage)
+            ?: resources.getDrawable(R.drawable.day)
+        nightDrawable = styleAttrs.getDrawable(R.styleable.DayNightSwitch_nightImage)
+            ?: resources.getDrawable(R.drawable.night)
+        sliderMargin =
+            styleAttrs.getDimension(R.styleable.DayNightSwitch_sliderPadding, dpToPx(5f)).toInt()
         sliderColor = styleAttrs.getColor(R.styleable.DayNightSwitch_sliderColor, Color.WHITE)
         isDayChecked = styleAttrs.getBoolean(R.styleable.DayNightSwitch_isDayChecked, false)
+        duration = styleAttrs.getInt(R.styleable.DayNightSwitch_slideDuration, 300).toLong()
 
         styleAttrs.recycle()
     }
 
-    private fun dpToPx(dp: Float) = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
+    private fun dpToPx(dp: Float) =
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -133,7 +147,8 @@ class DayNightSwitch(context: Context, attrs: AttributeSet?, style: Int) : Linea
         val animationDuration = if (animated) duration else 0L
 
         if (isDayChecked) {
-            slider.animate().translationX(sliderDeltaX.toFloat()).setDuration(animationDuration).start()
+            slider.animate().translationX(sliderDeltaX.toFloat()).setDuration(animationDuration)
+                .start()
             nightBg.animate().alpha(0f).setDuration(animationDuration).start()
             listener?.onSwitch(this, true)
         } else {

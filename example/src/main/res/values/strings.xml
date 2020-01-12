@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DayNightSwitch</string>
+    <string name="night">Night</string>
+    <string name="day">Day</string>
 </resources>
