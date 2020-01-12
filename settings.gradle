@@ -1,0 +1,2 @@
+include ':example', ':daynightswitch'
+rootProject.name='DayNightSwitch'

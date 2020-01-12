@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ma.apps.widgets.daynightswitch.DayNightSwitch
+        android:id="@+id/switch_1"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        app:sliderColor="#F49044"
+        app:sliderPadding="7dp" />
+
+    <ma.apps.widgets.daynightswitch.DayNightSwitch
+        android:id="@+id/switch_2"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        app:sliderColor="#F49044"
+        app:sliderPadding="2dp" />
+
+</LinearLayout>

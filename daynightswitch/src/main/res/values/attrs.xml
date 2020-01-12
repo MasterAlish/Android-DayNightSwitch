@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DayNightSwitch">
+        <attr name="isDayChecked" format="boolean"/>
+        <attr name="sliderColor" format="color"/>
+        <attr name="sliderPadding" format="dimension"/>
+        <attr name="dayImage" format="reference"/>
+        <attr name="nightImage" format="reference"/>
+    </declare-styleable>
+</resources>
