@@ -1,5 +1,7 @@
 # Android-DayNightSwitch
 
+[![Release](https://jitpack.io/v/MasterAlish/Android-DayNightSwitch.svg)](https://jitpack.io/#MasterAlish/Android-DayNightSwitch)
+
 Simple and Customizable Android Day Night Switch Widget
 
 ![Slider](/images/example.gif?raw=true "Example 1")
